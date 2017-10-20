@@ -1,0 +1,3 @@
+guzzle:
+    clients:
+        zoho_invoice_api: ~

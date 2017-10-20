@@ -1,0 +1,14 @@
+parameters:
+    chaplean_zoho_invoice_client.api.organization_id: '%chaplean_zoho_invoice.organization_id%'
+    chaplean_zoho_invoice_client.api.access_token: '%chaplean_zoho_invoice.access_token%'
+    chaplean_zoho_invoice_client.api.url: "https://invoice.zoho.com/api/v3/"
+
+services:
+    zoho_invoice_api:
+        class: Chaplean\Bundle\ZohoInvoiceClientBundle\API\ZohoInvoiceApi
+        arguments:
+            - '@guzzle.client.zoho_invoice_api'
+            - '@event_dispatcher'
+            - '%chaplean_zoho_invoice_client.api.url%'
+            - '%chaplean_zoho_invoice_client.api.access_token%'
+            - '%chaplean_zoho_invoice_client.api.organization_id%'
