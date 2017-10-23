@@ -5,7 +5,7 @@ parameters:
 
 services:
     zoho_invoice_api:
-        class: Chaplean\Bundle\ZohoInvoiceClientBundle\API\ZohoInvoiceApi
+        class: Chaplean\Bundle\ZohoInvoiceClientBundle\Api\ZohoInvoiceApi
         arguments:
             - '@guzzle.client.zoho_invoice_api'
             - '@event_dispatcher'
