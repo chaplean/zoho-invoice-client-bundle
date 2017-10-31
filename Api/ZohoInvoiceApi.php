@@ -597,9 +597,9 @@ class ZohoInvoiceApi extends AbstractApi
                         ->optional(),
                     'exchange_rate'          => Parameter::float()
                         ->optional(),
-                    'recurring_invoice_id'   => Parameter::id()
+                    'recurring_invoice_id'   => Parameter::string()
                         ->optional(),
-                    'invoiced_estimate_id'   => Parameter::id()
+                    'invoiced_estimate_id'   => Parameter::string()
                         ->optional(),
                     'salesperson_name'       => Parameter::string()
                         ->optional(),
@@ -768,9 +768,9 @@ class ZohoInvoiceApi extends AbstractApi
                         ->optional(),
                     'exchange_rate'          => Parameter::float()
                         ->optional(),
-                    'recurring_invoice_id'   => Parameter::id()
+                    'recurring_invoice_id'   => Parameter::string()
                         ->optional(),
-                    'invoiced_estimate_id'   => Parameter::id()
+                    'invoiced_estimate_id'   => Parameter::string()
                         ->optional(),
                     'salesperson_name'       => Parameter::string()
                         ->optional(),
