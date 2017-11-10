@@ -184,7 +184,7 @@ class ZohoInvoiceApi extends AbstractApi
         $this->get('estimate', 'estimates/{id}')
             ->urlParameters(
                 [
-                    'id' => Parameter::id()
+                    'id' => Parameter::string()
                 ]
             )
             ->queryParameters(
@@ -367,7 +367,7 @@ class ZohoInvoiceApi extends AbstractApi
         $this->put('estimate', 'estimates/{id}')
             ->urlParameters(
                 [
-                    'id' => Parameter::id()
+                    'id' => Parameter::string()
                 ]
             )
             ->requestParameters(
@@ -502,7 +502,7 @@ class ZohoInvoiceApi extends AbstractApi
         $this->get('invoice', 'invoices/{id}')
             ->urlParameters(
                 [
-                    'id' => Parameter::id()
+                    'id' => Parameter::string()
                 ]
             )
             ->queryParameters(
@@ -736,7 +736,7 @@ class ZohoInvoiceApi extends AbstractApi
         $this->put('invoice', 'invoices/{id}')
             ->urlParameters(
                 [
-                    'id' => Parameter::id()
+                    'id' => Parameter::string()
                 ]
             )
             ->requestParameters(
