@@ -1,0 +1,25 @@
+image: chaplean/php:7.1-no-xdebug
+
+services:
+    - name: chaplean/mysql:mariadb10.1
+      alias: mysql
+
+variables:
+    MYSQL_ROOT_PASSWORD: root
+    MYSQL_USER: app_user
+    MYSQL_PASSWORD: app_password
+    MYSQL_DATABASE: test_database
+
+cache:
+    paths:
+        - bin/
+        - vendor/
+
+before_script:
+    - composer install --prefer-dist --no-interaction
+    - chmod -R +x ./bin/
+
+test:
+    stage: test
+    script:
+        - phpdbg -qrr ./bin/phpunit --configuration phpunit.xml.dist --colors=never --coverage-text
