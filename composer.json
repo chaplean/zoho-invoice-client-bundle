@@ -33,7 +33,6 @@
         "chaplean/coding-standard": "^1.1",
         "mockery/mockery": "dev-master",
         "phpunit/phpunit": "^6.3",
-        "satooshi/php-coveralls": "dev-master",
         "symfony/http-kernel": "^2.8 || ^3.0 || ^4.0",
         "symfony/var-dumper": "^2.8 || ^3.0 || ^4.0"
     },

@@ -12,6 +12,10 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 /**
  * Class ZohoInvoiceApi
  *
+ * @method Route        getContacts()
+ *
+ * @method Route        getContactPersons()
+ *
  * @method Route        getItems()
  * @method Route        getItem()
  * @method Route        getEstimate()
@@ -72,6 +76,53 @@ class ZohoInvoiceApi extends AbstractApi
         $this->globalParameters()
             ->sendJSONString()
             ->urlPrefix($this->url)
+            ->queryParameters(
+                [
+                    'authtoken'       => Parameter::string()
+                        ->defaultValue($this->token),
+                    'organization_id' => Parameter::string()
+                        ->defaultValue($this->organizationId)
+                ]
+            );
+
+        // Contacts
+        $this->get('contacts', 'contacts')
+            ->queryParameters(
+                [
+                    'authtoken'       => Parameter::string()
+                        ->defaultValue($this->token),
+                    'organization_id' => Parameter::string()
+                        ->defaultValue($this->organizationId),
+                    'contact_name'        => Parameter::string()
+                        ->optional(),
+                    'company_name'        => Parameter::string()
+                        ->optional(),
+                    'first_name'        => Parameter::string()
+                        ->optional(),
+                    'last_name'        => Parameter::string()
+                        ->optional(),
+                    'address'        => Parameter::string()
+                        ->optional(),
+                    'email'        => Parameter::string()
+                        ->optional(),
+                    'phone'        => Parameter::string()
+                        ->optional(),
+                    'filter_by'   => Parameter::string()
+                        ->optional(), //Allowed Values: Status.All, Status.Active and Status.Inactive
+                    'search_text' => Parameter::string()
+                        ->optional(),
+                    'sort_column' => Parameter::string()
+                        ->optional(), // Allowed Values: name, rate and tax_name
+                ]
+            );
+
+        // ContactPerson
+        $this->get('contactPersons', 'contacts/{id}/contactpersons')
+            ->urlParameters(
+                [
+                    'id' => Parameter::id()
+                ]
+            )
             ->queryParameters(
                 [
                     'authtoken'       => Parameter::string()
