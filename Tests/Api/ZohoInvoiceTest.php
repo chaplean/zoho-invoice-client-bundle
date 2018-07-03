@@ -58,7 +58,7 @@ class ZohoInvoiceTest extends TestCase
         $methods = ['invoices','invoice', 'estimates', 'estimate', 'items', 'item'];
 
         $this->assertArrayHasKey('get', $this->routes);
-        $this->assertCount(6, $this->routes['get']);
+        $this->assertCount(8, $this->routes['get']);
         foreach ($methods as $method) {
             $this->assertArrayHasKey($method, $this->routes['get']);
         }
