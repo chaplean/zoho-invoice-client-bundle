@@ -27,6 +27,7 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
  * @method RequestRoute postItemActive()
  * @method RequestRoute postItemInactive()
  * @method RequestRoute postEstimate()
+ * @method RequestRoute postEstimateAsDeclined()
  * @method RequestRoute postInvoice()
  *
  * @method RequestRoute putItem()
@@ -412,6 +413,13 @@ class ZohoInvoiceApi extends AbstractApi
                         ->optional(),
                     'ignore_auto_number_generation' => Parameter::string()
                         ->optional(),
+                ]
+            );
+
+        $this->post('estimateAsDeclined', 'estimates/{id}/status/declined')
+            ->urlParameters(
+                [
+                    'id' => Parameter::string()
                 ]
             );
 
