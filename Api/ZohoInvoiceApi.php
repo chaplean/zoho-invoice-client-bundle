@@ -28,6 +28,7 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
  * @method RequestRoute postItemInactive()
  * @method RequestRoute postEstimate()
  * @method RequestRoute postEstimateAsDeclined()
+ * @method RequestRoute postEstimateAsAccepted()
  * @method RequestRoute postInvoice()
  *
  * @method RequestRoute putItem()
@@ -417,6 +418,13 @@ class ZohoInvoiceApi extends AbstractApi
             );
 
         $this->post('estimateAsDeclined', 'estimates/{id}/status/declined')
+            ->urlParameters(
+                [
+                    'id' => Parameter::string()
+                ]
+            );
+
+        $this->post('estimateAsAccepted', 'estimates/{id}/status/accepted')
             ->urlParameters(
                 [
                     'id' => Parameter::string()

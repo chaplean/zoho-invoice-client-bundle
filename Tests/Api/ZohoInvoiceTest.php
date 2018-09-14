@@ -71,10 +71,10 @@ class ZohoInvoiceTest extends TestCase
      */
     public function testPostRoutes()
     {
-        $methods = ['item','itemActive', 'itemInactive', 'estimate', 'estimateAsDeclined', 'invoice'];
+        $methods = ['item','itemActive', 'itemInactive', 'estimate', 'estimateAsDeclined', 'estimateAsAccepted', 'invoice'];
 
         $this->assertArrayHasKey('post', $this->routes);
-        $this->assertCount(6, $this->routes['post']);
+        $this->assertCount(7, $this->routes['post']);
         foreach ($methods as $method) {
             $this->assertArrayHasKey(strtolower($method), $this->routes['post']);
         }
