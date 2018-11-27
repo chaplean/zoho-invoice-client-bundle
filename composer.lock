@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "4736aa67a1c8d3124814c8c1f957ce63",
+    "content-hash": "afe223fcb1d28d728cd545ae2c6fe697",
     "packages": [
         {
             "name": "chaplean/rest-client-bundle",
@@ -1466,6 +1466,40 @@
             ],
             "description": "Contains ruleset for coding standard",
             "time": "2017-07-16T09:44:51+00:00"
+        },
+        {
+            "name": "chaplean/continuous-integration-scripts",
+            "version": "v2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/chaplean/continuous-integration-scripts.git",
+                "reference": "fc6d89626811a4846c79448b4f04ab7df4fa9b45"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/chaplean/continuous-integration-scripts/zipball/fc6d89626811a4846c79448b4f04ab7df4fa9b45",
+                "reference": "fc6d89626811a4846c79448b4f04ab7df4fa9b45",
+                "shasum": ""
+            },
+            "bin": [
+                "bin/deploy.sh",
+                "bin/deploy-htaccess.sh",
+                "bin/phpunit.sh",
+                "bin/services-waiting.sh"
+            ],
+            "type": "symfony-bundle",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chaplean",
+                    "homepage": "http://www.chaplean.coop"
+                }
+            ],
+            "description": "Deploy scripts to automatically install in your bin directory",
+            "time": "2018-10-05T13:50:14+00:00"
         },
         {
             "name": "doctrine/instantiator",

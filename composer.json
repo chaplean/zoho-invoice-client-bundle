@@ -29,8 +29,8 @@
         "symfony/yaml": "^2.8 || ^3.0 || ^4.0"
     },
     "require-dev": {
-        "chaplean/codeship-scripts": "^1.0",
         "chaplean/coding-standard": "^1.1",
+        "chaplean/continuous-integration-scripts": "^2.1",
         "mockery/mockery": "dev-master",
         "phpunit/phpunit": "^6.3",
         "symfony/http-kernel": "^2.8 || ^3.0 || ^4.0",
